@@ -1,0 +1,280 @@
+1 and 2 question answers-: Armstrong;
+
+package first;
+
+public class Test {
+
+	public static void main(String[] args) {
+		int a,r,n=0,s;
+		for(int i=153;i<=1000;i++)
+		{   a=i;
+		    s=0;
+		while(a>0)
+		{
+			r=a%10;
+			s=s+(r*r*r);
+			a=a/10;
+		}
+		if(s==i)
+		System.out.println(i);
+	}
+
+     }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+3. Simple and compound interest
+package first;
+
+import java.util.Scanner;
+
+public class Simple {
+
+	public static void main(String[] args) {
+		double pr,t,sim,com,rate;
+		Scanner sai = new Scanner (System.in);
+		System.out.println("enter the pr value: ");
+		pr=sai.nextDouble();
+		System.out.println("enter the no.of years value:  ");
+		t=sai.nextDouble();
+		System.out.println("enter the rate value:");
+		rate=sai.nextDouble();
+		sim=(pr * t * rate)/100;
+		com=pr * Math.pow(1.0+rate/100.0, t)-pr;
+		System.out.println("simple interest="+sim);
+		System.out.println("compoundInterest="+com);
+		
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+4.
+
+package first;
+
+import java.io.DataInput;
+import java.util.Scanner;
+
+public class fourth {
+
+	public static void main(String[] args) {
+		int sub1,sub2,sub3;
+	   Scanner sc  = new Scanner(System.in);
+		 System.out.println("enter the 1st subject");
+		 sub1=sc.nextInt();
+		 System.out.println("enter the 2 nd subject");
+		 sub2=sc.nextInt();
+		 System.out.println("enter the 3rd subject marks");
+		 sub3=sc.nextInt();
+		 
+		 if(sub1>=60 && sub2>=60 &&  sub3>=60)
+		 
+			 System.out.println("You are passed");
+		 
+		 else if((sub1>=60 || sub2>=60 || sub3 <=60) && (sub1>=60 || sub2 <=60 || sub3>=60) && (sub1<=60 || sub2>=60 || sub3>=60))
+			 
+			 System.out.println("promoted");
+		 
+		 else if((sub1>=60 || sub2<=60 || sub3 <=60) && (sub1<=60 || sub2 >=60 || sub3<=60) && (sub1<=60 || sub2<=60 || sub3>=60)) 
+			 System.out.println("failed");
+		 }
+			 
+	 }
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5.
+package first;
+import java.io.DataInput;
+
+import java.util.Scanner;
+
+public class Five {
+
+	public static void main(String[] args) {
+		
+		double slabA;
+		Scanner sai =new Scanner(System.in);
+		System.out.println("enter the value");
+	    slabA=sai.nextDouble();
+	    
+	   	if(slabA>=0 || slabA<=180000) 
+			System.out.println("Nil");
+		else if(slabA>=181001 || slabA<=300000)
+			System.out.println("u pay 10 %");
+		else if (slabA<=300001 || slabA<=500000)
+			System.out.println("u pay 20%");
+		else if (slabA>=500001 || slabA<=1000000)
+			System.out.println("u pay 30%");
+		
+   }
+
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6.
+package first
+import java.util.*;
+public class CUIbasedapplication {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		String u1="sai";
+		String p1="kiran";
+		String username="",password="";
+		int count=0;
+		do
+		{
+			System.out.print("Enter your username:");
+			username=sc.next();
+			System.out.print("Enter your password:");
+			password=sc.next();
+			if(password.equals(p1)&& username.equals(u1))
+			{
+				System.out.println("Welcome "+username);
+				return ;
+			}
+			else
+			{
+				System.out.println("Error!!! Try again");
+				count++;
+			}
+			
+		}while(count<3);
+		System.out.println("Contact Admin");
+
+	}
+
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+7.
+import java.util.*;
+public class seven {
+	public static void main(String args[]) {
+		int e=0;
+		int a=0;
+		int[] array = new int[15];
+		for(int i=0;i<15;i++) {
+			System.out.println("enter element :");
+			Scanner sc = new Scanner(System.in);
+			e=sc.nextInt();
+			array[i]=e;
+		}
+		for(int i=0;i<15;i++) {
+			if(array[i]==19)
+				a++;
+		}
+		if(a==1)
+			System.out.println("Element Found....");
+		else
+			System.out.println("unable to find element");
+		System.exit(1);
+	}
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+8.
+  public class eight {
+	public static void main(String args[]) {
+		int i=0,a=0,temp=0;
+		int array[] = {5,12,14,6,78,19,1,23,26,35,37,7,52,86,47}; 
+		for(i=0;i<15;i++)
+		{
+			for(int j=i+1;j<15;j++)
+			{
+				if(array[i]>array[j])
+				{
+					temp=array[i];
+					array[i]=array[j];
+					array[j]=temp;
+				}
+			}
+		}
+	for(i=0;i<15;i++) {
+		System.out.println(array[i]);
+	}
+
+}
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9.
+package nine;
+import java.util.*;
+public class marksof3 {
+		public static void main(String args[]) {
+			int rp,rc,rm,ap,ac,am,sc1,sp,sm;
+			System.out.println("enter the marks scored by Ram :\n");
+			System.out.println("Physics :");
+			Scanner sc = new Scanner(System.in);
+			rp =sc.nextInt();
+			System.out.println("chemistry :");
+			rc =sc.nextInt();
+			System.out.println("Maths :");
+			rm =sc.nextInt();
+			int rtot = rc+rm+rp;
+			int ravg=rtot/3;
+			sc.close();
+			System.out.println("enter the marks scored by Shyam :\n");
+			System.out.println("Physics :");
+			//Scanner sc = new Scanner(System.in);
+			sp =sc.nextInt();
+			System.out.println("chemistry :");
+			sc1 =sc.nextInt();
+			System.out.println("Maths :");
+			sm =sc.nextInt();
+			int stot = sc1+sm+sp;
+			int savg=rtot/3;
+			sc.close();
+			System.out.println("enter the marks scored by Ali :\n");
+			System.out.println("Physics :");
+			//Scanner sc = new Scanner(System.in);
+			ap =sc.nextInt();
+			System.out.println("chemistry :");
+			ac =sc.nextInt();
+			System.out.println("Maths :");
+			am =sc.nextInt();
+			int atot = ac+am+ap;
+			int aavg=atot/3;
+			sc.close();
+			int py=rp+sp+ap;
+			System.out.println("subject total,avg Physics:"+py+","+py/3);
+			int cy=sc1+rc+ac;
+			System.out.println("subject total Chemistry:"+cy);
+			int my=rm+sm+am;
+			System.out.println("subject total Maths:"+my);
+			}
+}
+		 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	
+		
+		 
+		 
+		  
+		   
+		  
+		  
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
