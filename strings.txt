@@ -1,0 +1,101 @@
+1.
+package strings;
+
+
+public class Allstringmethods {
+
+	public static void main(String args[]) {
+		
+		String str="Java String pool refers to collection of Strings which are stored in heap memory";
+		
+		//1System.out.println(str.toLowerCase());
+		//2System.out.println(str.toUpperCase());
+		//3String replaceString =str.replaceAll("a", "$");
+		 //3System.out.println(replaceString);
+		
+		//4String test = "collection";
+	    
+		//Boolean bool = str.contains(test);
+		// System.out.println(bool);
+		
+		//5System.out.print("Does String contains(.*)java string pool refers to collection of strings which are stored in heap memory ? : " );
+	      //System.out.println(str.matches("(.*)java string pool refers to collection of strings which are stored in heap memory(.*)"));
+		
+		 String str1="java string pool refers to collection of strings which are stored in heap memory";
+	      boolean bool = str.equals(str1);
+	      boolean bool1 = str.equalsIgnoreCase(str1);
+	      System.out.println(bool);
+	      System.out.println(bool1);
+-------------------------------------------------------------------------------------------------------------------------------------------
+2.
+package strings;
+
+public class Join {
+
+	public static void main(String[] args) {
+		String first = "Hello ";
+	    System.out.println("First String: " + first);
+
+	    // create second
+	    String second = "How are You?";
+	    System.out.println("Second String: " + second);
+
+	    // join two strings
+	    String joinedString = first.concat(second);
+	    System.out.println("Joined String: " + joinedString);
+	    //System.out.println(first+" "+second);//without using join method.
+	  }
+
+	}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3.package strings;
+
+public class Stringbuffer {
+
+	public static void main(String[] args) {
+		
+		
+		/*StringBuffer sai = new StringBuffer("Welcome to class ");
+		
+		sai.append("is a peer class of String ");
+		sai.append("that provides much of ");
+		sai.append("the functionally of strings");
+		System.out.println(sai);*/
+		
+		/*StringBuffer sai = new StringBuffer("it is used to the specified index position");
+		
+		sai.insert(10, " insert text");
+		
+		System.out.println(sai);*/
+		
+		
+		StringBuffer sai = new StringBuffer("This method returns the reversed object on which it was called");
+		
+		sai.reverse();
+		
+		System.out.println(sai);
+		
+	}
+
+}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4.package strings;
+
+import java.util.Scanner;
+
+public class Strlen {
+
+	public static void main(String[] args) {
+		
+		String str1=new String("hello world");
+		
+		System.out.print("String length :"+str1.length());
+		//System.out.println(str1.length());//
+	}
+
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+		
+		 
