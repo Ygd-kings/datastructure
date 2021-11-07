@@ -1,0 +1,88 @@
+1.
+package handling;
+
+import java.util.Scanner;
+
+public class Hand {
+	
+	public static void main(String[] args) {
+		
+	 /* Scanner sai =new Scanner(System.in);
+	  System.out.println("Enter the number");
+	  int a = sai.nextInt();
+	  int b =sai.nextInt();*/
+		int a=1, b=0;
+	  try {
+		  int c= a/b;  
+		  //System.out.println(c);
+	  }
+	  
+	 catch( ArithmeticException exception) {
+		   
+	 }
+	  //System.out.println(c);
+	  
+	  finally {
+		  System.out.println("always executed");
+	  }
+	  
+	  System.out.println("ends");
+	}
+
+}
+--------------------------------------------------------------------------------------------------------------------------
+2.
+package handling;
+import java.util.Scanner;
+public class Withdraw {
+
+	     		    static void fun() throws IllegalAccessException
+	     		        		  
+			    {
+			        double balance = 0, depositAmount, withdrawAmount;
+
+			        Scanner dep=new Scanner(System.in);
+			        System.out.println("Enter Deposit an amount");
+			        depositAmount =dep.nextInt();
+			        balance += depositAmount;
+
+			        Scanner wd=new Scanner(System.in);
+			        System.out.println("Enter Withdraw an amount ");
+			        withdrawAmount=wd.nextInt();
+			      
+			        
+					       		       		        
+			        balance -= withdrawAmount;
+			       		       
+			        if (balance<0&&withdrawAmount>balance)
+			        {
+			            throw new IllegalAccessException();
+			            
+			        }
+			        else
+			            System.out.println("SUCCESSFULLY WITHDRAWN : "+withdrawAmount);
+			        System.out.println("ACCOUNT BALANCE AFTER  THE TRANSACTION : "+balance);
+			    }
+       			public static void main(String args[])
+			    {
+
+			        try {
+			            fun();
+			       
+			         
+			        }
+			        catch(IllegalAccessException e) {
+			            System.out.println(" WARNING :INSUFFICIENT BALANCE EXCEPTION ");
+			            
+			              
+			            
+			           
+			        }
+			    }
+			} 
+				
+			
+
+		
+
+	
