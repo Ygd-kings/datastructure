@@ -1,0 +1,136 @@
+package sai.kiran;
+
+public class Customer {
+	private int Id;
+	private String name;
+	private int phone;
+	private Address address;
+	
+	public int getId() {
+		return Id;
+	}
+	public void setId(int id) {
+		Id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getPhone() {
+		return phone;
+	}
+	public void setPhone(int phone) {
+		this.phone = phone;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	public String toString()
+	{
+		return "Employee [id=" + Id + ", name="+ name +" ,id=" + phone +"]"; 
+		
+	}
+	
+}
+------------------------------------
+package sai.kiran;
+
+public class Address {
+	
+	private String street;
+	private String city;
+	private String state;
+	private int zip;
+	private String country;
+	
+	
+	public String getStreet() {
+		return street;
+	}
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public int getZip() {
+		return zip;
+	}
+	public void setZip(int zip) {
+		this.zip = zip;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	
+	public String tostring() {
+		return "Address [street = " +street +" , city ="+ city+ ",state"+state+",zip="+zip+", country="+country+ "]";
+	}
+
+}
+--------------------------------------------------
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean id = "customer" class="sai.kiran.Customer">
+   <property name= "id1" value=" 1"></property>
+   <property name ="name" value ="sai"></property>
+    <property name= "phone"  value ="1234556789"></property>
+ 
+
+ <property name="address">
+  <bean class ="sai.kiran.Address">
+  
+  <property name = "street" value ="kr street"></property>
+  <property name = " city" value  =" kadapa"></property>
+  <property name =" state" value = "Andhra"></property>
+  <property name ="zip"    value = "589235"></property>
+  <property name = "country" value = "india"></property>
+  </bean>
+  
+</property>
+
+</bean>
+</beans>
+-------------------------------------
+package sai.kiran;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		ApplicationContext context = new ClassPathXmlApplicationContext("additional.xml");
+		
+		Customer customer = (Customer) context.getBean("customer");
+		
+				System.out.println(customer);
+		
+		
+
+	}
+
+}
+------------------
