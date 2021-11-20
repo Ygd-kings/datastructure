@@ -1,0 +1,241 @@
+1. package information;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+
+
+public class Calories {
+
+	public static void main(String[] args) {
+		
+		List<Fruits> fruitslist=Arrays.asList(new Fruits("Mango",95, 90,"Yellow"),
+		new Fruits("Apple", 95, 30, "Red"),
+	    new Fruits("Strawberry", 25, 10,"Red"),
+		new Fruits("Cherry", 10, 10, "Red"),
+		new Fruits("Grapes", 15, 20, "Green"));
+		
+		//fruits.forEach(System.out::println);
+	
+		List<Fruits>sortedList=fruitslist.stream().sorted(Comparator.comparingInt(Fruits::getCalories).reversed()).collect(Collectors.toList());
+		System.out.println("Fruits with calories<100 are:");
+		sortedList.forEach(System.out::println);
+
+	}	
+		
+
+	}
+
+package information;
+public class Fruits {
+	
+	private String name;
+	private int calories;
+	private int price;
+	private String color;
+	
+	public Fruits(String name,Integer calories,Integer price,String color) {
+		this.name=name;
+		this.calories=calories;
+		this.price=price;
+		this.color=color;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+    
+	public int getCalories() {
+		return calories;
+	}
+	public void setCalories(int calories) {
+		this.calories = calories;
+	}
+	
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	@Override
+    public String toString() {
+    	return this.name+ " " + this.calories+ " " + this.price+" " +  this.color + " ";
+    	
+
+    }
+    
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.package information;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Color {
+
+	public static void main(String[] args) {
+		
+		List<Fruits> fruitslist=Arrays.asList(new Fruits("Mango",99, 90,"Yellow"),
+		new Fruits("Apple", 95, 30, "Red"),
+	    new Fruits("Strawberry", 25, 10,"Red"),
+		new Fruits("Cherry", 10, 10, "Red"),
+		new Fruits("Grapes", 15, 20, "Green"));
+		
+		//fruits.forEach(System.out::println);
+		List<Fruits> colorList=fruitslist.stream().sorted(Comparator.comparing(Fruits::getColor)).collect(Collectors.toList());
+		System.out.println("Colorwise sorting of fruits is:");
+		colorList.forEach(System.out::println);
+	}
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+4.package StreamAPI;
+
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class News {
+
+	int newsId;
+	String postedByUser;
+	String commentByUser;
+	String comment;
+
+	public News(int newsId, String postedByUser, String commentByUser, String comment) {
+		super();
+		this.newsId = newsId;
+		this.postedByUser = postedByUser;
+		this.commentByUser = commentByUser;
+		this.comment = comment;
+	}
+
+	public int getNewsId() {
+		return newsId;
+	}
+
+	public void setNewsId(int newsId) {
+		this.newsId = newsId;
+	}
+
+	public String getPostedByUser() {
+		return postedByUser;
+	}
+
+	public void setPostedByUser(String postedByUser) {
+		this.postedByUser = postedByUser;
+	}
+
+	public String getCommentByUser() {
+		return commentByUser;
+	}
+
+	public void setCommentByUser(String commentByUser) {
+		this.commentByUser = commentByUser;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public static void main(String[] args ) {
+
+		List<News> list=Arrays.asList(
+				new News(123, "farmers", "sai", "Farmers are really facing against with farm laws.so he's commenting about the farmers will definetly win in these war."),
+				new News(234, "Rainfalls", "kiran", "Rainfalls are effected to the rural peoples because they are not felling well and don't have food since two days"));
+
+			
+}
+
+	@Override
+	public String toString() {
+		return "News [newsId=" + newsId + ", postedByUser=" + postedByUser + ", commentByUser=" + commentByUser
+				+ ", comment=" + comment + "]";
+	}
+
+
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5.int count=(int) list.stream()
+						.filter(x-> x.comment.contains("farm laws"))
+						.count();
+				System.out.println(count);
+				
+				System.out.println("=====================================================");
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. Optional<String> max = list.stream().map(x->x.commentByUser)
+			 			.max((i,j)->i.compareTo(j));
+			 System.out.println(max.get());
+			
+			 Optional<News> max1=list.stream()
+			 .collect(Collectors.maxBy(Comparator.comparing(News::getCommentByUser)));
+			 
+			 System.out.println(max1.get());
+				
+			list.stream().map(x->x.commentByUser)
+			.sorted()
+			.forEach(System.out::println);
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+9.package StreamAPI;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class Trader {
+
+	String name;
+	String city;
+	public Trader(String name, String city) {
+		super();
+		this.name = name;
+		this.city = city;
+	}
+
+	public static void main(String[] args) {
+		List<Trader> list=Arrays.asList(
+				new Trader("Iron Man", "Pune"),
+				new Trader("Thor", "Bangalore"),
+				new Trader("Hulk", "Pune"),
+				new Trader("Captain", "Delhi")
+				);
+		
+
+
+		list.stream().map(x-> x.city)
+		.distinct()
+		.forEach(System.out::println);
+
+
+		System.out.println("==========================================");
+--------------------------------------------------------------------------------------------------------------
+10.
+		
+		list.stream().filter(x->x.city.contains("Pune"))
+		.map(x->x.name)
+		.sorted()
+		.forEach(System.out::println);
+
+	}
+
+	@Override
+	public String toString() {
+		return "Trader [name=" + name + ", city=" + city + "]";
+	}
+
+
+}
+--------------------------------------------------------------------------------------------------------------------------

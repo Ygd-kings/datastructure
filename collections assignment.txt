@@ -1,0 +1,51 @@
+import java.util.*;
+class Treemap {
+public static void main (String args[]){
+Treemap yk = new Treemap();
+yk.put("phno","12344567789");
+yk.put("name","bala");
+yk.put("email","bala@gmail.com");
+
+Set s = tm.Keyset();
+Iterator sai = s.iterator();
+while(sai.hasNext()) { 
+Object obj=sai.next();
+String str= (String)obj;
+System.out.println(str+":"+yk.get(str));
+   }
+ }
+}
+--------------------------------------------------------------------------------------------------------------------------------
+
+import java.util.Hashset;
+class HashsetDemo {
+public static void main (String args[]) {
+Hashset yk = new Hashset ();
+yk.add("kiran");
+yk.add("sai");
+yk.add("uday");
+yk.add("reddy");
+yk.add("pawan");
+yk.add("hemanth");
+yk.add("achyth");
+yk.add("ravi");
+yk.add("puneeth");
+yk.add("shiva");
+Iterator sai = yk.iterator();
+while(sai.hasNext());
+System.out.println(sai.next());
+ }
+} 
+--------------------------------------------------------------------------------------------------------------------------------------------
+class TreesetDemo{
+public static void main(String args[]){
+Treeset ts = new Treeset();
+yk.add("ID","001");
+yk.add("Name","ravi");
+yk.add("Dep","ece");
+yk.add("salary","10k");
+Iterator sai = yk.iterator();
+while(sai.hasNext());
+System.out.println(sai.next());
+ }
+}
